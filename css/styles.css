@@ -1,0 +1,205 @@
+/* Google Fonts Import */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+/* Reset & Base Styles */
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #e3fef7; /* Light sea green background */
+  color: #003c43; /* Dark teal color for text */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Navigation Styling */
+nav {
+  background-color: #77b0aa; /* Teal background for navigation */
+  display: flex;
+  justify-content: center; /* Center the navigation items */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  padding: 10px 0; /* Padding for better touch area */
+}
+
+nav ul {
+  list-style: none; /* Removes default list styling */
+  padding: 0;
+  margin: 0;
+  display: flex; /* Flexbox for horizontal layout */
+  justify-content: center; /* Center items horizontally */
+}
+
+nav ul li {
+  margin: 0 10px; /* Spacing between navigation items */
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 15px; /* Padding for clickable area */
+  color: white; /* Text color */
+  text-decoration: none; /* No underline */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: #135d66; /* Darker shade of teal for hover/focus */
+}
+
+.hero-section {
+  background: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+.cta-button {
+  padding: 10px;
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+}
+.cta-button.secondary {
+  background-color: grey;
+}
+.about-section,
+.features-section {
+  padding: 20px;
+  border-top: 1px solid #ccc;
+}
+
+/* Main Content Area */
+.content {
+  background-color: white; /* White background for content areas */
+  padding: 20px; /* Spacing inside content boxes */
+  border-radius: 8px; /* Rounded corners for content boxes */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 1200px; /* Max width of content area */
+  margin: 20px auto; /* Centering content horizontally */
+  overflow: hidden; /* Fixes any spillover caused by child elements */
+}
+
+/* Button Styles */
+.button {
+  background-color: #ffd166; /* Yellowish tone for buttons */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #ffb703; /* Darker yellow on hover */
+}
+
+/* Link Styles */
+a {
+  color: #135d66; /* Link color */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover for better visibility */
+}
+
+/* Table Styles for Vocabulary and Grammar Tables */
+table {
+  width: 100%; /* Full width tables */
+  border-collapse: collapse; /* Collapses border to look cleaner */
+  margin-top: 20px; /* Space above the table */
+}
+
+th,
+td {
+  padding: 12px; /* Padding within table cells */
+  border-bottom: 1px solid #77b0aa; /* Teal bottom border for separation */
+}
+
+th {
+  text-align: left;
+  background-color: #003c43; /* Darker header cells */
+  color: white; /* White text for headers */
+}
+
+.step-box {
+  background-color: #e0f2f1; /* Light green color */
+  padding: 20px;
+  margin: 10px auto; /* Centered horizontally, 10px margin on the top and bottom */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center; /* Centers children vertically within the container */
+  align-items: center; /* Centers children horizontally within the container */
+  flex-direction: column;
+  width: 80%; /* Sets the width of the step-box */
+  box-sizing: border-box;
+}
+.step-box h1,
+.step-box h3,
+.step-box p {
+  text-align: left;
+  margin: 20px 0;
+  width: 100%;
+  background-color: #e0f2f1; /* Light green color */
+}
+.step-box-text {
+  background-color: white; /* Light gray background for visibility */
+  padding: 20px 20px 20px 20px; /* Consistent padding on all sides */
+  margin: 10px auto; /* Centered horizontally */
+  display: flex;
+  justify-content: flex-start; /* Align content to the start of the flex container */
+  align-items: flex-start; /* Align items to the start of the cross axis */
+  flex-direction: column;
+  width: 80%;
+  box-sizing: border-box;
+}
+
+.step-box-text ul {
+  padding-left: 20px; /* Add padding to match the paragraphs above */
+  margin: 0; /* Reset default margin */
+  list-style-type: disc; /* If you want to display the default bullet points */
+}
+
+.step-box-text li {
+  margin-bottom: 10px; /* Adjust space between list items if necessary */
+}
+
+.step-box-text h1,
+.step-box-text h3,
+.step-box-text p {
+  text-align: left;
+  margin: 20px 0 20px 0; /* Top, right, bottom, left margin */
+  width: 100%;
+  background-color: white;
+}
+
+.step-box-table {
+  background-color: #fefded; /* light green color */
+  padding: 40px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 85%;
+  box-sizing: border-box;
+}
+/* Footer Styling */
+footer {
+  background-color: #77b0aa; /* Teal background matching nav */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px; /* Space above footer */
+  width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Stack nav items vertically on small screens */
+  }
+
+  .content,
+  footer {
+    width: 90%; /* Slightly narrower content for padding */
+    margin: 20px auto; /* Centering content */
+  }
+}
