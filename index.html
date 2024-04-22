@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <title>Swedish for Immigrants</title>
-    <link rel="stylesheet" href="css\styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <nav>
@@ -14,31 +14,93 @@
         <li><a href="#speaking">Speaking</a></li>
         <li><a href="writing_tasks.html">Writing</a></li>
         <li><a href="documentation.html">Documentation</a></li>
-        <li><a href="International_tests">Test Simulation</a></li>
+        <li><a href="International_tests.html">Test Simulation</a></li>
         <li><a href="#contact">Contact Us</a></li>
       </ul>
     </nav>
+    <!-- Hero Section -->
     <header class="hero-section">
-      <img src="path_to_hero_image.jpg" alt="Learn Swedish" class="hero-image">
-      <div class="hero-section">
+      <img
+        src="img/dalahast-714901_1280-removebg-preview.png"
+        alt="Learn Swedish"
+        class="hero-image"
+      />
+      <div class="hero-content">
         <h1>Welcome to Your Swedish Journey!</h1>
-        <p>Master the Swedish language through continuous practice with exercises similar to those in SFI.</p>
-        <a href="#get-started" class="cta-button">Get Started</a>
-        <a href="#learn-more" class="cta-button secondary">Learn More</a>
-    </div>
-</header>
-<main>
-    <section id="about" class="about-section">
-        <h2>About This Platform</h2>
-        <p>Discover the most effective way to learn Swedish with our comprehensive learning modules.</p>
-    </section>
-    <section id="features" class="features-section">
-        <h2>Main Features</h2>
-        <p>Explore reading, writing, listening, and speaking exercises designed to enhance your language skills.</p>
-    </section>
-</main>
+        <p>Let's practice with exercises similar to those in SFI.</p>
+        <a href="index.html" class="cta-button">Get Started</a>
+        <a href="login.html" class="cta-button secondary"
+          >I already have an account</a
+        >
+      </div>
+    </header>
+    <!-- End Hero Section -->
 
-</html>
+    <!-- Learning Sections Container -->
+    <main>
+      <div class="learning-container">
+        <!-- Reading Section -->
+        <div
+          id="reading"
+          class="learning-section"
+          style="background-color: #135d66"
+        >
+          <img src="img/face.png" alt="Learn Swedish" class="writing-image" />
+          <h2>Reading</h2>
+          <p>Improve your comprehension with engaging texts.</p>
+          <a href="reading_tasks.html" class="cta-button">Start Reading</a>
+        </div>
+
+        <!-- Writing Section -->
+        <div
+          id="writing"
+          class="learning-section"
+          style="background-color: #135d66"
+        >
+          <img
+            src="img/writing.png"
+            alt="Learn Swedish"
+            class="writing-image"
+          />
+          <h2>Writing</h2>
+          <p>Enhance your writing skills with various exercises.</p>
+          <a href="writing_tasks.html" class="cta-button">Start Writing</a>
+        </div>
+
+        <!-- Listening Section -->
+        <div
+          id="listening"
+          class="learning-section"
+          style="background-color: #135d66"
+        >
+          <img
+            src="img/listening.png"
+            alt="Learn Swedish"
+            class="writing-image"
+          />
+          <h2>Listening</h2>
+          <p>Practice your listening comprehension with audio materials.</p>
+          <a href="listening_tasks.html" class="cta-button">Start Listening</a>
+        </div>
+
+        <!-- Speaking Section -->
+        <div
+          id="speaking"
+          class="learning-section"
+          style="background-color: #135d66"
+        >
+          <img
+            src="img/speaking.png"
+            alt="Learn Swedish"
+            class="writing-image"
+          />
+          <h2>Speaking</h2>
+          <p>Develop your speaking skills through conversation practice.</p>
+          <a href="speaking_tasks.html" class="cta-button">Start Speaking</a>
+        </div>
+      </div>
+    </main>
+
     <footer>
       <p>Page created by Mahsa Abbasian. All rights reserved © 2024</p>
       <div class="footer-links">
@@ -47,7 +109,6 @@
           >LinkedIn Account</a
         >
         |
-
         <a href="https://github.com/MahsaAbbasian">GitHub Account</a>
       </div>
       <div class="footer-links">
@@ -55,5 +116,6 @@
         <a href="/terms">Terms of Use</a>
       </div>
     </footer>
+    <script scr="login.js"></script>
   </body>
 </html>
