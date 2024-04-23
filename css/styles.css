@@ -10,10 +10,21 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Centering the header */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
 /* Login page styles */
 .container {
-  max-width: 400px;
-  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 350px;
+  margin: 2rem auto;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -25,11 +36,17 @@ form {
   flex-direction: column;
 }
 
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
 input[type="email"],
 input[type="password"] {
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
   border-radius: 4px;
   font-size: 16px;
 }
@@ -48,6 +65,58 @@ input[type="submit"]:hover {
   background-color: #0056b3;
 }
 
+/* Social Login Buttons */
+.social-login {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-login p {
+  margin: 10px 0;
+}
+
+/* Ensure consistent alignment and width for form elements */
+.form-group,
+.social-login {
+  width: 100%; /* Match the width for all form elements */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.social-button {
+  background-color: #eee; /* Placeholder color */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-transform: uppercase;
+  width: auto; /* Override the full width */
+  margin: 0; /* Remove margin between buttons */
+}
+
+.social-button.facebook {
+  margin-top: 1rem;
+  background-color: #3b5998;
+  color: white;
+}
+
+.social-button.google {
+  margin-top: 1rem;
+  background-color: #db4437;
+  color: white;
+}
+
+.social-button:hover {
+  opacity: 0.9;
+}
+
+.legal {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  color: #6c757d;
+}
 .error-message {
   color: red;
   margin-bottom: 10px;
@@ -257,4 +326,21 @@ footer {
     width: 90%; /* Slightly narrower content for padding */
     margin: 20px auto; /* Centering content */
   }
+}
+
+.about-us {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.about-us h1,
+.about-us h2 {
+  color: #135d66;
+}
+
+.about-us p {
+  color: #333;
+  line-height: 1.6;
 }
