@@ -1,346 +1,143 @@
-/* Google Fonts Import */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 
-/* Reset & Base Styles */
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: #e3fef7; /* Light sea green background */
-  color: #003c43; /* Dark teal color for text */
-  line-height: 1.6;
   margin: 0;
   padding: 0;
+  background-color: #e3fef7;
+  color: #003c43;
+  line-height: 1.6;
 }
 
-/* Centering the header */
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-}
-/* Login page styles */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 350px;
-  margin: 2rem auto;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input[type="email"],
-input[type="password"] {
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-input[type="submit"] {
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover {
-  background-color: #0056b3;
-}
-
-/* Social Login Buttons */
-.social-login {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.social-login p {
-  margin: 10px 0;
-}
-
-/* Ensure consistent alignment and width for form elements */
-.form-group,
-.social-login {
-  width: 100%; /* Match the width for all form elements */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.social-button {
-  background-color: #eee; /* Placeholder color */
-  border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  text-transform: uppercase;
-  width: auto; /* Override the full width */
-  margin: 0; /* Remove margin between buttons */
-}
-
-.social-button.facebook {
-  margin-top: 1rem;
-  background-color: #3b5998;
-  color: white;
-}
-
-.social-button.google {
-  margin-top: 1rem;
-  background-color: #db4437;
-  color: white;
-}
-
-.social-button:hover {
-  opacity: 0.9;
-}
-
-.legal {
-  text-align: center;
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  color: #6c757d;
-}
-.error-message {
-  color: red;
-  margin-bottom: 10px;
-}
-/* Header Navigation Styling */
 nav {
-  background-color: #77b0aa; /* Teal background for navigation */
-  display: flex;
-  justify-content: center; /* Center the navigation items */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  padding: 10px 0; /* Padding for better touch area */
+  width: 100%;
+  background-color: #77b0aa;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
-  list-style: none; /* Removes default list styling */
+  list-style-type: none;
   padding: 0;
   margin: 0;
-  display: flex; /* Flexbox for horizontal layout */
-  justify-content: center; /* Center items horizontally */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav ul li {
-  margin: 0 10px; /* Spacing between navigation items */
+  float: none;
+  padding: 10px;
 }
 
 nav ul li a {
   display: block;
-  padding: 10px 15px; /* Padding for clickable area */
-  color: white; /* Text color */
-  text-decoration: none; /* No underline */
-  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s;
 }
 
 nav ul li a:hover,
 nav ul li a:focus {
-  background-color: #135d66; /* Darker shade of teal for hover/focus */
+  background-color: #135d66;
+  outline: none;
 }
 
+.logo img {
+  height: 40px;
+  width: auto;
+  margin: 5px 10px;
+}
+
+/* Hero Section */
 .hero-section {
-  background-color: #f4f4f4;
-  padding: 80px 0;
+  position: relative;
   text-align: center;
-  position: relative; /* Set the position to relative */
+  color: white;
+}
+
+.hero-image {
+  width: 80%;
+  height: auto;
+  border-radius: 50%;
 }
 
 .hero-content {
-  margin-bottom: 20px;
-  position: relative; /* Set the position to relative */
-  z-index: 1; /* Set a positive z-index to place the content above the image */
-}
-
-.hero-content h1,
-.hero-content p {
-  color: #003c43; /* Adjust text color for better contrast */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .cta-button {
-  padding: 10px;
-  background-color: #135d66;
+  background-color: #77b0aa;
   color: white;
+  padding: 10px 20px;
   text-decoration: none;
+  border-radius: 5px;
+  margin: 5px;
+  transition: background-color 0.3s;
 }
 
 .cta-button.secondary {
   background-color: #135d66;
 }
-.about-section,
-.features-section {
-  padding: 20px;
-  border-top: 1px solid #ccc;
+
+.cta-button:hover,
+.cta-button:focus {
+  background-color: #004a4f;
 }
 
-/* Main Content Area */
-.content {
-  background-color: white; /* White background for content areas */
-  padding: 20px; /* Spacing inside content boxes */
-  border-radius: 8px; /* Rounded corners for content boxes */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  max-width: 1200px; /* Max width of content area */
-  margin: 20px auto; /* Centering content horizontally */
-  overflow: hidden; /* Fixes any spillover caused by child elements */
-}
-
-/* Button Styles */
-.button {
-  background-color: #ffd166; /* Yellowish tone for buttons */
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.button:hover {
-  background-color: #ffb703; /* Darker yellow on hover */
-}
-
-/* Link Styles */
-a {
-  color: #135d66; /* Link color */
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline; /* Underline on hover for better visibility */
-}
-
-/* Table Styles for Vocabulary and Grammar Tables */
-table {
-  width: 100%; /* Full width tables */
-  border-collapse: collapse; /* Collapses border to look cleaner */
-  margin-top: 20px; /* Space above the table */
-}
-
-th,
-td {
-  padding: 12px; /* Padding within table cells */
-  border-bottom: 1px solid #77b0aa; /* Teal bottom border for separation */
-}
-
-th {
-  text-align: left;
-  background-color: #003c43; /* Darker header cells */
-  color: white; /* White text for headers */
-}
-
-.step-box {
-  background-color: #e0f2f1; /* Light green color */
-  padding: 20px;
-  margin: 10px auto; /* Centered horizontally, 10px margin on the top and bottom */
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.learning-container {
   display: flex;
-  justify-content: center; /* Centers children vertically within the container */
-  align-items: center; /* Centers children horizontally within the container */
-  flex-direction: column;
-  width: 80%; /* Sets the width of the step-box */
-  box-sizing: border-box;
-}
-.step-box h1,
-.step-box h3,
-.step-box p {
-  text-align: left;
+  flex-wrap: wrap;
+  justify-content: space-around;
   margin: 20px 0;
-  width: 100%;
-  background-color: #e0f2f1; /* Light green color */
-}
-.step-box-text {
-  background-color: white; /* Light gray background for visibility */
-  padding: 20px 20px 20px 20px; /* Consistent padding on all sides */
-  margin: 10px auto; /* Centered horizontally */
-  display: flex;
-  justify-content: flex-start; /* Align content to the start of the flex container */
-  align-items: flex-start; /* Align items to the start of the cross axis */
-  flex-direction: column;
-  width: 80%;
-  box-sizing: border-box;
 }
 
-.step-box-text ul {
-  padding-left: 20px; /* Add padding to match the paragraphs above */
-  margin: 0; /* Reset default margin */
-  list-style-type: disc; /* If you want to display the default bullet points */
-}
-
-.step-box-text li {
-  margin-bottom: 10px; /* Adjust space between list items if necessary */
-}
-
-.step-box-text h1,
-.step-box-text h3,
-.step-box-text p {
-  text-align: left;
-  margin: 20px 0 20px 0; /* Top, right, bottom, left margin */
-  width: 100%;
+.learning-section {
   background-color: white;
-}
-
-.step-box-table {
-  background-color: #fefded; /* light green color */
-  padding: 40px;
-  margin: 20px 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 85%;
-  box-sizing: border-box;
-}
-/* Footer Styling */
-footer {
-  background-color: #77b0aa; /* Teal background matching nav */
-  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+  max-width: 300px;
+  margin: 20px;
   text-align: center;
-  padding: 10px 0;
-  margin-top: 20px; /* Space above footer */
-  width: 100%;
+  padding: 20px;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+.learning-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+footer {
+  background-color: #77b0aa;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
   nav ul {
-    flex-direction: column; /* Stack nav items vertically on small screens */
+    flex-direction: column;
   }
 
   .content,
   footer {
-    width: 90%; /* Slightly narrower content for padding */
-    margin: 20px auto; /* Centering content */
+    width: 90%;
+    margin: 20px auto;
   }
-}
-
-.about-us {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  font-family: "Arial", sans-serif;
-}
-
-.about-us h1,
-.about-us h2 {
-  color: #135d66;
-}
-
-.about-us p {
-  color: #333;
-  line-height: 1.6;
 }
