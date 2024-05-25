@@ -1,72 +1,65 @@
+/* styles.css */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 
 body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #e3fef7;
+  background-color: #f5f7fa;
   color: #003c43;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 nav {
-  width: 100%;
   background-color: #77b0aa;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-nav ul {
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   list-style-type: none;
   padding: 0;
   margin: 0;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-nav ul li {
-  float: none;
+.nav-list li {
   padding: 10px;
 }
 
-nav ul li a {
+.nav-list li a {
   display: block;
   color: white;
+  padding: 14px 20px;
   text-decoration: none;
   transition: background-color 0.3s;
 }
 
-nav ul li a:hover,
-nav ul li a:focus {
+.nav-list li a:hover,
+.nav-list li a:focus {
   background-color: #135d66;
   outline: none;
 }
 
-.logo img {
-  height: 40px;
-  width: auto;
-  margin: 5px 10px;
-}
-
-/* Hero Section */
 .hero-section {
   position: relative;
   text-align: center;
   color: white;
-}
-
-.hero-image {
-  width: 80%;
-  height: auto;
-  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  background-image: url("../img/imigration4.PNG");
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.6);
   padding: 20px;
   border-radius: 10px;
@@ -106,6 +99,14 @@ nav ul li a:focus {
   margin: 20px;
   text-align: center;
   padding: 20px;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.learning-section:hover {
+  transform: translateY(-10px);
 }
 
 .learning-section img {
@@ -128,10 +129,13 @@ footer {
   text-align: center;
   width: 100%;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media screen and (max-width: 768px) {
-  nav ul {
+  .nav-list {
     flex-direction: column;
   }
 
