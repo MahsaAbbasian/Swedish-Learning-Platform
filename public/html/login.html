@@ -3,69 +3,92 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Login to your account with ease and security."
-    />
     <title>Login</title>
+
+    <!-- Add reCAPTCHA script here -->
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lc_PjwqAAAAAG1FWkj1S2y3HFtvrOcAw0Olsqbi
+    "></script>
+    <!-- Include this in login.html, signup.html, and other pages using Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js"></script>
+    <script src="/js/firebase-init.js"></script>
+
     <link rel="stylesheet" href="css/styles.css" />
   </head>
+
   <body>
-    <header>
-      <h1>Login to Your Account</h1>
-    </header>
-    <main>
-      <section class="container">
-        <form id="login-form">
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required />
-          </div>
-          <input type="submit" value="Login" />
-        </form>
-        <section class="social-login">
-          <p>— OR —</p>
-          <button
-            type="button"
-            class="social-button facebook"
-            aria-label="Login with Facebook"
-          >
-            Login with Facebook
-          </button>
-          <button
-            type="button"
-            class="social-button google"
-            aria-label="Login with Google"
-          >
-            Login with Google
-          </button>
-          <div class="legal">
-            By signing in to this page, you agree to our Terms and Privacy
-            Policy.<br />
-            This site is protected by reCAPTCHA Enterprise and the Google
-            Privacy Policy and Terms of Service apply.
-          </div>
-        </section>
-      </section>
-    </main>
-    <footer>
-      <p>Page created by Mahsa Abbasian. All rights reserved © 2024</p>
-      <div class="footer-links">
-        <a href="mailto:mahsa.abbasian@outlook.com">Contact Email</a> |
-        <a href="https://www.linkedin.com/in/mahsa-abbasian-a893b44b/"
-          >LinkedIn Account</a
+    <main class="login-container">
+      <div class="login-box">
+        <h2>Log in</h2>
+        <!-- modify your form button to call the onSubmit function -->
+        <form
+          id="login-form"
+          action="/login"
+          method="post"
+          onsubmit="onSubmit(event)"
         >
-        |
-        <a href="https://github.com/MahsaAbbasian">GitHub Account</a>
+          <label for="email">Email or username</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+
+          <a href="#" class="forgot-password">Forgot?</a>
+          <input type="submit" value="Log In" />
+        </form>
+
+        <div class="divider">
+          <span>OR</span>
+        </div>
+
+        <div class="social-login">
+          <button class="social-button facebook">Facebook</button>
+          <button class="social-button google">Google</button>
+        </div>
+
+        <footer class="login-footer">
+          <p>
+            By signing in, you agree to our
+            <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+          </p>
+        </footer>
       </div>
-      <div class="footer-links">
-        <a href="/privacy">Privacy Policy</a> |
-        <a href="/terms">Terms of Use</a>
-      </div>
-    </footer>
+    </main>
+
+    <!-- Add the reCAPTCHA script -->
+    <script>
+      // This script handles reCAPTCHA verification for the login form.
+      // IMPORTANT: This requires Firebase Cloud Functions to verify the reCAPTCHA token.
+      // Firebase Functions require the Blaze plan, so this feature won't work until you upgrade.
+      // When ready to upgrade, deploy the backend verification functions in Firebase.
+      async function onSubmit(e) {
+        e.preventDefault(); // Prevents default form submission
+
+        grecaptcha.enterprise.ready(async () => {
+          const token = await grecaptcha.enterprise.execute(
+            "6Lc_PjwqAAAAAG1FWkj1S2y3HFtvrOcAw0Olsqbi",
+            { action: "LOGIN" }
+          );
+          // Append the token to your form data
+          const formData = new FormData(document.getElementById("login-form"));
+          formData.append("recaptchaToken", token);
+
+          // Send the form data and token to Firebase for verification
+          const response = await fetch("/verifyRecaptcha", {
+            method: "POST",
+            body: formData,
+          });
+
+          const result = await response.json();
+          if (result.success) {
+            // reCAPTCHA verified, proceed with login
+            // After getting the token, you need to send it to your backend server for verification
+            document.getElementById("login-form").submit(); // Submit the form
+          } else {
+            alert("reCAPTCHA verification failed. Please try again.");
+          }
+        });
+      }
+    </script>
   </body>
 </html>
