@@ -1,0 +1,82 @@
+.flashcard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.flashcard {
+  background-color: #47e0db;
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+  perspective: 1000px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.flashcard .front,
+.flashcard .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #333;
+  border-radius: 10px;
+}
+
+.flashcard .back {
+  transform: rotateY(180deg);
+  font-size: 16px;
+}
+
+.flashcard.flip .front {
+  transform: rotateY(180deg);
+}
+
+.flashcard.flip .back {
+  transform: rotateY(0deg);
+}
+
+/* Buttons for Pass/Fail */
+.actions {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pass-btn {
+  background-color: green;
+  color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fail-btn {
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pass-btn:hover {
+  background-color: #45a049;
+}
+
+.fail-btn:hover {
+  background-color: #e60000;
+}

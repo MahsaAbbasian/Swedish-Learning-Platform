@@ -11,9 +11,10 @@
     <!-- Include this in login.html, signup.html, and other pages using Firebase -->
     <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js"></script>
-    <script src="/js/firebase-init.js"></script>
+    <script src="../js/firebase-init.js"></script>
+    <script src="../js/scripts.js"></script>
 
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
 
   <body>
@@ -54,41 +55,5 @@
         </footer>
       </div>
     </main>
-
-    <!-- Add the reCAPTCHA script -->
-    <script>
-      // This script handles reCAPTCHA verification for the login form.
-      // IMPORTANT: This requires Firebase Cloud Functions to verify the reCAPTCHA token.
-      // Firebase Functions require the Blaze plan, so this feature won't work until you upgrade.
-      // When ready to upgrade, deploy the backend verification functions in Firebase.
-      async function onSubmit(e) {
-        e.preventDefault(); // Prevents default form submission
-
-        grecaptcha.enterprise.ready(async () => {
-          const token = await grecaptcha.enterprise.execute(
-            "6Lc_PjwqAAAAAG1FWkj1S2y3HFtvrOcAw0Olsqbi",
-            { action: "LOGIN" }
-          );
-          // Append the token to your form data
-          const formData = new FormData(document.getElementById("login-form"));
-          formData.append("recaptchaToken", token);
-
-          // Send the form data and token to Firebase for verification
-          const response = await fetch("/verifyRecaptcha", {
-            method: "POST",
-            body: formData,
-          });
-
-          const result = await response.json();
-          if (result.success) {
-            // reCAPTCHA verified, proceed with login
-            // After getting the token, you need to send it to your backend server for verification
-            document.getElementById("login-form").submit(); // Submit the form
-          } else {
-            alert("reCAPTCHA verification failed. Please try again.");
-          }
-        });
-      }
-    </script>
   </body>
 </html>

@@ -178,7 +178,7 @@ footer {
   min-height: 100vh; /* Ensure it takes the full viewport height */
   margin: 0; /* Remove any margin */
   padding: 0;
-  box-sizing: border-box; /* Ensures padding/borders are included in the size */
+  background-color: #f0f0f0; /* Optional: Add a background color for contrast */
 }
 .login-box {
   background-color: red;
@@ -305,4 +305,51 @@ footer {
 
 .login-footer a:hover {
   text-decoration: underline;
+}
+/* Custom styling for story page */
+.story-content {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.story-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Tooltip styling for translations */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the text */
+  left: 50%;
+  margin-left: -125px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

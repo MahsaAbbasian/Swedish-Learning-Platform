@@ -4,49 +4,104 @@
     <meta charset="UTF-8" />
     <title>Reading</title>
     <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+      /* Custom styling for story boxes */
+      .story-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .story-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        transition: transform 0.2s ease-in-out;
+        background-color: #f9f9f9;
+        text-align: center;
+      }
+
+      .story-box:hover {
+        transform: scale(1.05);
+      }
+
+      .story-box img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .story-box h3 {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #333;
+      }
+    </style>
   </head>
   <body>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="reading_tasks.html">Reading</a></li>
-        <li><a href="vocabularyExercises.html">Vocabulary List</a></li>
-        <li><a href="speaking_tasks.html">Speaking</a></li>
-        <li><a href="writing_tasks.html">Writing</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../html/reading_tasks.html">Reading</a></li>
+        <li><a href="../html/vocabularyExercises.html">Vocabulary</a></li>
+        <li><a href="../html/speaking_tasks.html">Speaking</a></li>
+        <li><a href="../html/writing_tasks.html">Writing</a></li>
       </ul>
     </nav>
 
     <div class="content">
       <h1>Reading</h1>
-      <p>Improve your reading skills with various materials and exercises.</p>
-      <ul>
-        <li><a href="readingMaterials.html">Reading Materials</a></li>
-        <li>
-          <a href="readingComprehension.html"
-            >Reading Comprehension Exercises</a
-          >
-        </li>
-      </ul>
+      <p>
+        In this section, there are lots of different level stories that you can
+        start one by one and practice the Swedish language in the form of a
+        story. Later, you can see and practice vocabulary as a next level.
+      </p>
+
+      <!-- Story Boxes -->
+      <div class="story-container">
+        <a href="story1.html" class="story-box">
+          <img src="../img/story1.png" alt="Story 1" />
+          <h3>Mystery in Apartment 13 - Episode 1</h3>
+        </a>
+
+        <a href="story2.html" class="story-box">
+          <img src="../img/story2.png" alt="Story 2" />
+          <h3>The Lost Key - Episode 2</h3>
+        </a>
+
+        <a href="story3.html" class="story-box">
+          <img src="../img/story3.png" alt="Story 3" />
+          <h3>A Day at the Market - Episode 3</h3>
+        </a>
+
+        <a href="story4.html" class="story-box">
+          <img src="../img/story4.png" alt="Story 4" />
+          <h3>The Mysterious Letter - Episode 4</h3>
+        </a>
+
+        <!-- Add more story boxes as needed -->
+      </div>
     </div>
 
     <footer>
       <p>Page created by Mahsa Abbasian. All rights reserved © 2024</p>
-      <p>
-        Contact us at:
-        <a href="mailto:mahsa.abbasian@outlook.com"
-          >mahsa.abbasian@outlook.com</a
-        >
-      </p>
-      <p>
+      <div class="footer-links">
+        <a href="mailto:mahsa.abbasian@outlook.com">Contact Email</a> |
         <a href="https://www.linkedin.com/in/mahsa-abbasian-a893b44b/"
-          >LinkedIn</a
+          >LinkedIn Account</a
         >
-        | <a href="https://github.com/MahsaAbbasian">GitHub</a>
-      </p>
-      <p>
+        |
+        <a href="https://github.com/MahsaAbbasian">GitHub Account</a>
+      </div>
+      <div class="footer-links">
         <a href="/privacy">Privacy Policy</a> |
         <a href="/terms">Terms of Use</a>
-      </p>
+      </div>
     </footer>
   </body>
 </html>
