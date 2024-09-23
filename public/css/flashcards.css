@@ -1,3 +1,4 @@
+/* Flashcard container */
 .flashcard-container {
   display: flex;
   flex-wrap: wrap;
@@ -5,8 +6,11 @@
   justify-content: center;
 }
 
-.flashcard {
-  background-color: #007acc;
+/* Updated Flashcards layout with row limit */
+.flashcard-container .flashcard {
+  flex: 1 0 30%; /* Set each flashcard to take 30% width of the container */
+  background-color: #006db3; /* Swedish word color on the front */
+  color: white;
   width: 200px;
   height: 150px;
   border-radius: 10px;
@@ -18,25 +22,35 @@
   cursor: pointer;
 }
 
-.flashcard .front,
+/* Front of flashcard */
+.flashcard .front {
+  background-color: #006db3; /* Front color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Back of flashcard */
 .flashcard .back {
+  background-color: #999999; /* Back color for translations */
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  color: #333;
   border-radius: 10px;
-}
-
-.flashcard .back {
   transform: rotateY(180deg);
-  font-size: 16px;
 }
 
+/* Flip animation */
 .flashcard.flip .front {
   transform: rotateY(180deg);
 }
@@ -45,74 +59,90 @@
   transform: rotateY(0deg);
 }
 
-/* Buttons for Pass/Fail */
-.actions {
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.pass-btn {
-  background-color: green;
+/* Print Button Styling */
+.print-button {
+  background-color: #aa5a22;
   color: white;
-  padding: 5px;
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
 }
 
-.fail-btn {
-  background-color: red;
-  color: white;
-  padding: 5px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.print-button:hover {
+  background-color: #743913;
 }
 
-.pass-btn:hover {
-  background-color: #45a049;
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+  .flashcard-container .flashcard {
+    flex: 1 0 45%; /* Make flashcards take 45% width */
+    margin-bottom: 10px;
+  }
 }
 
-.fail-btn:hover {
-  background-color: #e60000;
-}
-/* Custom styling for story boxes */
-.story-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  margin: 20px 0;
+@media (max-width: 480px) {
+  .flashcard-container .flashcard {
+    flex: 1 0 90%; /* Make flashcards take 90% width */
+  }
 }
 
-.story-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  transition: transform 0.2s ease-in-out;
-  background-color: #007acc;
-  text-align: center;
-}
+/* Media Query for Print */
+@media print {
+  /* Hide elements you don't want to print */
+  nav,
+  .print-button,
+  footer {
+    display: none;
+  }
 
-.story-box:hover {
-  transform: scale(1.05);
-}
+  /* Ensure story content and flashcards print nicely */
+  .story-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
-.story-box img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-}
+  /* Ensure flashcards are printed in their unflipped state */
+  .flashcard.flip .front,
+  .flashcard.flip .back {
+    transform: none; /* Disable any transform effects for print */
+  }
 
-.story-box h3 {
-  margin-top: 10px;
-  font-size: 18px;
-  color: #ddd;
+  /* Flashcards print next to each other, fitting as many as possible */
+  .flashcard {
+    width: 45%; /* Allow two flashcards per row */
+    height: auto;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+    display: inline-block; /* Ensures flashcards print inline without page breaks */
+  }
+
+  /* Remove 3D transformations for print */
+  .flashcard .front,
+  .flashcard .back {
+    position: relative;
+    backface-visibility: visible;
+    transform: none; /* Override any rotation for print */
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .flashcard .front {
+    background-color: #006db3;
+    color: white;
+    font-size: 18px;
+  }
+
+  .flashcard .back {
+    background-color: #999;
+    font-size: 16px;
+    margin-top: 10px;
+  }
 }
