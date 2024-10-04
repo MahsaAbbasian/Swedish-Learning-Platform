@@ -1,6 +1,7 @@
 // Import the required Firebase libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-analytics.js";  // Import Analytics
 // Import Firestore
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
 // Your Firebase config (replace hardcoded values with environment variables)
@@ -16,4 +17,5 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getFirestore(app); // 'app' in initialized Firbase app
+const analytics = getAnalytics(app);
+export const db = getFirestore(app); // 'app' in initialized Firbase app

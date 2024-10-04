@@ -1,11 +1,16 @@
 /* Flashcard container */
 .flashcard-container {
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f1f7ff;
+  width: 80%; /* Keeps it similar in width to the story box */
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
-
 /* Updated Flashcards layout with row limit */
 .flashcard-container .flashcard {
   flex: 1 0 30%; /* Set each flashcard to take 30% width of the container */

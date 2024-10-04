@@ -367,7 +367,15 @@ footer {
   gap: 20px;
   margin: 20px 0;
 }
-
+.story-text-box {
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  width: 80%; /* Adjusts width for better spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 .story-box {
   display: flex;
   flex-direction: column;
@@ -401,4 +409,21 @@ footer {
 
 .story-box:hover h3 {
   color: #fff; /* Ensures text color stays readable */
+}
+/* Quiz Form */
+#quizForm {
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff7e6;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#quizForm .question {
+  margin-bottom: 15px;
+}
+#quizForm label {
+  margin-left: 10px;
 }

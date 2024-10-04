@@ -1,16 +1,12 @@
 {
-  "name": "public",
+  "name": "swedish-learning-platform",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo 'No build required'"
+    "start": "parcel public/index.html",
+    "build": "parcel build public/index.html"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "dotenv": "^16.4.5"
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.12.0",
+    "parcel": "^2.12.0"
   }
 }
